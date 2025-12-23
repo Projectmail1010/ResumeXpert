@@ -1,0 +1,379 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Corporate Palette */
+  --primary-color: #0f172a;       /* Dark Navy */
+  --primary-light: #1e293b;       /* Lighter Navy */
+  --accent-color: #3b82f6;        /* Professional Blue */
+  --accent-hover: #2563eb;        /* Darker Blue for hover */
+  --success-color: #10b981;       /* Emerald Green */
+  --danger-color: #ef4444;        /* Soft Red */
+  --warning-color: #f59e0b;       /* Amber */
+  
+  /* Neutral Palette */
+  --bg-body: #f1f5f9;             /* Light Slate Grey */
+  --bg-surface: #ffffff;          /* White */
+  --text-main: #1e293b;           /* Dark Slate */
+  --text-muted: #64748b;          /* Muted Grey */
+  --border-color: #e2e8f0;        /* Light Grey Border */
+
+  /* UI Properties */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition: all 0.2s ease-in-out;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Navigation Bar --- */
+.custom-navbar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.custom-welcome {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.custom-welcome strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* --- Forms --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.form-control, input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background: #f8fafc;
+  box-sizing: border-box; /* Fix width overflow */
+}
+
+.form-control:focus, input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Buttons --- */
+button, .custom-button, .btn {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.button, .btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+.button:hover, .btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.btn-outline-dark:hover {
+  background: var(--bg-body);
+  color: var(--primary-color);
+}
+
+.btn-danger { background-color: var(--danger-color); color: white; }
+.btn-danger:hover { background-color: #dc2626; }
+
+.btn-success { background-color: var(--success-color); color: white; }
+.btn-success:hover { background-color: #059669; }
+
+/* --- Auth Page Specifics --- */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* --- Dashboard Grid --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.action-card {
+  background: var(--bg-surface);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 200px;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+.action-card .icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.action-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.action-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* --- Tables --- */
+.table-responsive {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+.table th {
+  background: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-align: left;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* --- Badge / Tag Styles for Skills --- */
+.skill-badge {
+  background: #eff6ff;
+  color: var(--accent-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-right: 5px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+/* --- Add these new styles to your App.css --- */
+
+/* 1. Fix Input Group: Aligns Input and Button side-by-side */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between input and button */
+  width: 100%;
+}
+
+.input-group input {
+  flex: 1; /* Input takes up all remaining space */
+  /* Remove width:100% if it conflicts, or let flex override it */
+}
+
+.input-group .btn {
+  /* Ensure button doesn't shrink */
+  flex-shrink: 0;
+  height: 100%; /* Matches input height if padding aligns */
+}
+
+/* 2. Container for the list of added skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* Space between badges */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Bigger, Professional Skill Badges */
+.skill-badge {
+  background: #f1f5f9; /* Light background */
+  color: var(--primary-color); /* Dark text for contrast */
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem; /* Larger padding */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem; /* Larger font size */
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-badge:hover {
+  background: #e2e8f0;
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+/* Delete icon inside the badge */
+.skill-badge .delete-icon {
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.skill-badge .delete-icon:hover {
+  color: var(--danger-color);
+}

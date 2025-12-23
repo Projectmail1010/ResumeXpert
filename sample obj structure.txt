@@ -1,0 +1,45 @@
+{
+  "emailAddress": <string>,
+  "firstName": <string>,
+  "lastName": <string>,
+  "phoneNumber": <string>,
+  "location": <string>,
+ 
+  "linkedInLink": <string>,
+  "otherLinks": [<string>, <string>],
+ 
+  "workExperiences": [
+    {
+      "title": <string>,
+      "organization": <string>,
+      "location": <string>, // nullable
+ 
+      "skillsDescription": <string>,
+ 
+      "startMonth": <number>,
+      "startYear": <number>,
+      "endMonth": <number>,
+      "endYear": <number>,
+      "isOngoing": <boolean>
+    }
+  ],
+  "workExperiencesDiscardedItems": <boolean>,
+ 
+  "educations": [
+    {
+      "degree": <string>,
+      "school": <string>,
+      "year": <number>,
+      "endYear": <number>, // nullable
+      "notes": <string>,
+      "location": <string> // nullable
+    }
+  ],
+  "educationsDiscardedItems": <boolean>,
+ 
+  "fluentLanguages": [<string>, <string>],
+ 
+  "languages": [
+    { "language": <string>, "level": <string> }
+  ]
+}
