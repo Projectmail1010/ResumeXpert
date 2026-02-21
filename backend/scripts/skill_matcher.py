@@ -1,12 +1,3 @@
-# skill_matcher.py
-"""
-Robust SkillMatcher.
-- Loads skills_config.json
-- Canonicalizes tokens using aliases + family expansion
-- Matches by: exact canonical, family match, fuzzy (SequenceMatcher), semantic (optional)
-- Returns: dict jd_skill -> (matched_bool, method, resume_token, score)
-"""
-
 import json
 import os
 import re
