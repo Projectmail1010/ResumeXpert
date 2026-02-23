@@ -33,7 +33,7 @@ function Layout() {
         return 'Selected Candidates';
       case '/dashboard':
       default:
-        return 'ResumeXpert Dashboard';
+        return 'ResumeXtract Dashboard';
     }
   };
 
